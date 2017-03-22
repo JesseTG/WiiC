@@ -585,7 +585,7 @@ int wiic_connect(struct wiimote_t** wm, int wiimotes, int autoreconnect)
 	for (; i < wiimotes; ++i) {
 		if(!(wm[i])) {
 			WIIC_ERROR("Trying to connect more Wiimotes than initialized");
-			return;
+			return connected;
 		}
 		
 		if (!WIIMOTE_IS_SET(wm[i], WIIMOTE_STATE_DEV_FOUND))
